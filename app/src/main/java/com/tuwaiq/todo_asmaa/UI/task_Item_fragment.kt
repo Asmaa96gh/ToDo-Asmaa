@@ -25,14 +25,14 @@ class task_Item_fragment : Fragment() {
     }
 
     companion object {
-        fun newInstance() = first_fragment()
+        fun newInstance() = task_Item_fragment()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val txt =view.findViewById<TextView>(R.id.testId)
+   /*     val txt =view.findViewById<TextView>(R.id.testId)
         super.onViewCreated(view, savedInstanceState)
         val vmTask = ViewModelProvider(this).get(MainViewModel::class.java)
 
-
+*/
         }
     }

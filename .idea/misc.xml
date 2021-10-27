@@ -3,11 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/asmaa/AndroidStudioProjects/ToDo_Asmaa/app/src/main/res/drawable/circle.xml" value="0.22291666666666668" />
         <entry key="..\:/Users/asmaa/AndroidStudioProjects/ToDo_Asmaa/app/src/main/res/layout/activity_main.xml" value="0.14175724637681159" />
+        <entry key="..\:/Users/asmaa/AndroidStudioProjects/ToDo_Asmaa/app/src/main/res/layout/add__task_fragment.xml" value="0.20677083333333332" />
+        <entry key="..\:/Users/asmaa/AndroidStudioProjects/ToDo_Asmaa/app/src/main/res/layout/add_task.xml" value="0.20677083333333332" />
+        <entry key="..\:/Users/asmaa/AndroidStudioProjects/ToDo_Asmaa/app/src/main/res/layout/add_task_fragment.xml" value="0.25" />
         <entry key="..\:/Users/asmaa/AndroidStudioProjects/ToDo_Asmaa/app/src/main/res/layout/container.xml" value="0.2164855072463768" />
         <entry key="..\:/Users/asmaa/AndroidStudioProjects/ToDo_Asmaa/app/src/main/res/layout/fragment_first.xml" value="0.2164855072463768" />
+        <entry key="..\:/Users/asmaa/AndroidStudioProjects/ToDo_Asmaa/app/src/main/res/layout/fragment_show_details.xml" value="0.2125" />
         <entry key="..\:/Users/asmaa/AndroidStudioProjects/ToDo_Asmaa/app/src/main/res/layout/fragment_task__item_fragment.xml" value="0.2164855072463768" />
         <entry key="..\:/Users/asmaa/AndroidStudioProjects/ToDo_Asmaa/app/src/main/res/layout/task__item_fragment.xml" value="0.2164855072463768" />
+        <entry key="..\:/Users/asmaa/AndroidStudioProjects/ToDo_Asmaa/app/src/main/res/layout/task_item_fragment.xml" value="0.264" />
+        <entry key="..\:/Users/asmaa/AndroidStudioProjects/ToDo_Asmaa/app/src/main/res/layout/task_list_fragment.xml" value="0.213768115942029" />
+        <entry key="..\:/Users/asmaa/AndroidStudioProjects/ToDo_Asmaa/app/src/main/res/layout/update_fragment.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/asmaa/AndroidStudioProjects/ToDo_Asmaa/app/src/main/res/menu/update_edit_menu.xml" value="0.23541666666666666" />
       </map>
     </option>
   </component>

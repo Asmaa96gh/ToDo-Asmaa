@@ -5,7 +5,7 @@ import java.util.Date
 import java.time.OffsetDateTime
 import java.time.format.DateTimeFormatter
 
-
+// UNUSED CLASS
 object LocalDateTimeConverter {
     @TypeConverter
     fun toDate(dateString: String?): LocalDateTime? {
