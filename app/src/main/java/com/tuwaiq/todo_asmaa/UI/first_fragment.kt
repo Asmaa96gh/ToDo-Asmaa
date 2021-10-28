@@ -1,23 +1,21 @@
 package com.tuwaiq.todo_asmaa.UI
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.FrameLayout
 import android.widget.ImageView
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.tuwaiq.todo_asmaa.Add_Task
 import com.tuwaiq.todo_asmaa.R
 import com.tuwaiq.todo_asmaa.TaskListAdapter
-import com.tuwaiq.todo_asmaa.model.Task
 import com.tuwaiq.todo_asmaa.view.MainViewModel
+import android.view.MenuInflater
+import android.content.Intent
 import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+
 
 class first_fragment : Fragment() {
 
@@ -40,34 +38,77 @@ class first_fragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setHasOptionsMenu(true)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
-        /* viewModel.addTask(t)
-        viewModel.addTask(t2)*/
-        /*  viewModel.deleteTask(t)
-        viewModel.deleteTask(t2)*/
 
         recyclerView = view.findViewById(R.id.rvRecycleView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
 
 
-        to_addTaskPage = view.findViewById(R.id.toaddTaskpage)
+
 
         viewModel.getAllTasks().observe(viewLifecycleOwner ,{
             recyclerView.adapter = TaskListAdapter(it,viewModel)
 
         })
 
-
+        to_addTaskPage = view.findViewById(R.id.toaddTaskpage)
         to_addTaskPage.setOnClickListener {
-        requireActivity().supportFragmentManager.beginTransaction()
-        .replace(R.id.container , Add_Task())
-        .addToBackStack("main")
-        .commit()}
+            val action= first_fragmentDirections.actionFirstFragmentToAddTask()
+            it.findNavController().navigate(action)
+       }
     }
 
+   /* override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+*/
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.state_menu, menu)
+        return
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
+        val now=LocalDateTime.now()
+       val dateTimeOftheMoment= convertDateToString(now)
+       return when (item.itemId) {
+            R.id.yellow -> {
+                viewModel.getAllIncompleteavailable(false,dateTimeOftheMoment).observe(viewLifecycleOwner,{
+                        recyclerView.adapter = TaskListAdapter(it,viewModel)
+                })
+true
+            }
+            R.id.red -> {
+viewModel.getAlloutdatedAndincompelte(false,dateTimeOftheMoment).observe(viewLifecycleOwner,{
+    recyclerView.adapter = TaskListAdapter(it,viewModel)
+})
+true
+            }
+            R.id.green -> {
+viewModel.getAlldoneTask(true).observe(viewLifecycleOwner,{
+    recyclerView.adapter = TaskListAdapter(it,viewModel)
+})
+true
+            }
+           R.id.home -> {
+               viewModel.getAllTasks().observe(viewLifecycleOwner ,{
+                   recyclerView.adapter = TaskListAdapter(it,viewModel)
+
+               })
+               true
+           }
+           else -> false
+       }
+    }
+
+    fun convertDateToString(Date: LocalDateTime):String{
+        val localDate: LocalDateTime = LocalDateTime.now()
+        val formatter = DateTimeFormatter.ofPattern("yy-MM-dd HH:mm")
+        val formattedCreationDate: String = localDate.format(formatter)
+        return formattedCreationDate
+    }
 }

@@ -36,6 +36,16 @@ class ToDo_Repo(val context :Context) {
         toDo_DB.ToDoDao.updatethestate(state1,taskId)
     }
 
+    suspend  fun getAllIncompleteavailable(state1:Boolean,currentDate:String)= withContext(Dispatchers.IO){
+        toDo_DB.ToDoDao.getAllIncompleteavailable(state1,currentDate)
+    }
+
+    suspend  fun getAlldoneTask(state1:Boolean)= withContext(Dispatchers.IO){
+        toDo_DB.ToDoDao.getAlldoneTask(state1)
+    }
+    suspend  fun getAlloutdatedAndincompelte(state1:Boolean,currentDate:String)= withContext(Dispatchers.IO){
+        toDo_DB.ToDoDao.getAlloutdatedAndincompelte(state1,currentDate)
+    }
 
 
 }

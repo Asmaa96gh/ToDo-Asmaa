@@ -17,8 +17,11 @@ import android.icu.util.Calendar
 import android.widget.*
 
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import com.tuwaiq.todo_asmaa.UI.first_fragmentDirections
 import com.tuwaiq.todo_asmaa.model.Task
 import com.tuwaiq.todo_asmaa.view.MainViewModel
+import kotlinx.android.synthetic.main.add_task_fragment.*
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*
@@ -82,6 +85,9 @@ class Add_Task : Fragment() {
                 btnAdd.isEnabled=false}
             } else{title.error=" mandatory!!"
                 btnAdd.isEnabled=false}
+
+            val action= Add_TaskDirections.actionAddTaskToFirstFragment()
+            it.findNavController().navigate(action)
         }
 
 

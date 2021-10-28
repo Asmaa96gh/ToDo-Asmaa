@@ -10,6 +10,7 @@
     android:padding="12dp"
     app:cardCornerRadius="20dp"
     tools:context=".UI.task_Item_fragment"
+    android:id="@+id/cardView"
    >
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
@@ -84,4 +85,5 @@
         app:layout_constraintVertical_bias="0.2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.cardview.widget.CardView>

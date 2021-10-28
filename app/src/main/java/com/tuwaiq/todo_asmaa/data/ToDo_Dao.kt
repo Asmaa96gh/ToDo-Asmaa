@@ -44,7 +44,12 @@ interface  ToDo_Dao {
     @Query("update Task set state = :state1 where id == :taskId")
     suspend  fun updatethestate(state1:Boolean,taskId:String)
 
+    @Query("select * from Task where state =:state1 and :currentDate > DueDateTime ")
+    suspend  fun getAlloutdatedAndincompelte(state1:Boolean,currentDate:String):List<Task>
 
+    @Query("select * from Task where state =:state1 and :currentDate <= DueDateTime ")
+    suspend  fun getAllIncompleteavailable(state1:Boolean,currentDate:String):List<Task>
 
-
+    @Query("select * from Task where state =:state1 ")
+    suspend  fun getAlldoneTask(state1:Boolean):List<Task>
 }

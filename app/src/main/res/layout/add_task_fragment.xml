@@ -17,25 +17,24 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.429">
+        app:layout_constraintVertical_bias="0.329">
 
         <TextView
             android:layout_width="105dp"
             android:layout_height="40dp"
-            android:layout_weight="1"
             android:layout_margin="10dp"
-            android:text="due date"
-
+            android:layout_weight="1"
             android:paddingTop="10dp"
+
+            android:text="due date"
             android:textColor="@color/black" />
 
         <ImageButton
             android:id="@+id/btnDuedate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/calendar"
             android:layout_marginTop="15dp"
-            />
+            android:src="@drawable/calendar" />
 
         <TextView
             android:id="@+id/user_duedate"
@@ -55,7 +54,7 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.658"
+        app:layout_constraintVertical_bias="0.545"
         tools:layout_editor_absoluteX="0dp">
 
         <TextView
@@ -91,7 +90,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.289">
+        app:layout_constraintVertical_bias="0.195">
 
         <TextView
 
@@ -114,6 +113,49 @@
             android:inputType="text"
             android:minHeight="48dp"
             tools:ignore="SpeakableTextPresentCheck" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.737">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:text="tags"
+            android:textColor="@color/black"
+
+            />
+
+        <EditText
+            android:id="@+id/user_tag"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@color/offwhite"
+            android:ems="10"
+            android:inputType="text"
+            android:maxLength="20"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/addiconblack"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"/>
 
     </LinearLayout>
 
