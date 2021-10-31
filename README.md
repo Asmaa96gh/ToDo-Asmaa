@@ -18,8 +18,7 @@ my motivation was developing an application that enable me to implements what i 
 in making functional applications 
 
 ## :camera_flash: Screenshots
-![Test Image 3](/drawable-v24/homepage.PNG)
-![Alt text] (/drawable-v24/homepage.PNG?raw=true "Home page")
+
 <img src="src/main/res/drawable-v24/homepage.PNG" width="260">
 <img src="src/main/res/drawable-v24/add_task.PNG" width="260">
 <img src="src/main/res/drawable-v24/delete_warning.PNG" width="260">
