@@ -18,11 +18,11 @@ my motivation was developing an application that enable me to implements what i 
 in making functional applications 
 
 ## :camera_flash: Screenshots
-<img src="drawable-v24/homepage.PNG" width="260">
-<img src="drawable-v24/add_task.PNG" width="260">&emsp;
-<img src="drawable-v24/delete_warning.PNG" width="260">
-<img src="drawable-v24/showtask.PNG" width="260">
-<img src="drawable-v24/update.PNG" width="260">
-<img src="drawable-v24/filteryellow.PNG" width="260">
-<img src="drawable-v24/filtergreen.PNG" width="260">
-<img src="drawable-v24/filterred.PNG" width="260">
+<img src="src/main/res/drawable-v24/homepage.PNG" width="260">
+<img src="src/main/res/drawable-v24/add_task.PNG" width="260">&emsp;
+<img src="src/main/res/drawable-v24/delete_warning.PNG" width="260">
+<img src="src/main/res/drawable-v24/showtask.PNG" width="260">
+<img src="src/main/res/drawable-v24/update.PNG" width="260">
+<img src="src/main/res/drawable-v24/filteryellow.PNG" width="260">
+<img src="src/main/res/drawable-v24/filtergreen.PNG" width="260">
+<img src="src/main/res/drawable-v24/filterred.PNG" width="260">
