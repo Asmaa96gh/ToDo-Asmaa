@@ -1,18 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    app:cardBackgroundColor="@color/offwhite"
+    android:layout_margin="20dp"
+    android:orientation="vertical"
+    android:padding="12dp"
+    app:cardCornerRadius="20dp"
+    tools:context=".UI.task_Item_fragment"
+    android:id="@+id/cardView"
+   >
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".UI.task_Item_fragment">
+    android:orientation="horizontal">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/testId"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="30dp"
+    <ImageView
+        android:id="@+id/stateShape"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/yellowcircle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        />
 
-</LinearLayout>
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.297"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/taskTitle"
+            android:layout_width="218dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:text="title"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/taskDuedate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:text="due date"
+            android:textColor="@color/black" />
+
+        <CheckBox
+            android:id="@+id/stateCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:minHeight="48dp"
+            android:text="Done"
+            android:textColor="@color/black"
+            android:visibility="visible"
+            tools:ignore="TouchTargetSizeCheck" />
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/deleteTask"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/deleteblack"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

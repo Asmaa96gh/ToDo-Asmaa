@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.Add_Task"
+    android:background="@color/background2"
+   >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="task details:"
+        android:textSize="30dp"
+        android:fontFamily="@font/shellina"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.095"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.091" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="343dp"
+        android:layout_height="428dp"
+        android:background="@drawable/customborder"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.445">
+
+
+        <TextView
+            android:id="@+id/show_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:fontFamily="@font/rubik_variablefont_wght"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/show_duedate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:fontFamily="@font/rubik_variablefont_wght"
+            android:minHeight="48dp"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+
+        <TextView
+            android:id="@+id/show_decription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:fontFamily="@font/rubik_variablefont_wght"
+            android:inputType="textMultiLine"
+            android:minHeight="48dp"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+
+        <TextView
+            android:id="@+id/show_creationDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:fontFamily="@font/rubik_variablefont_wght"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/edit_task_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/offwhite"
+        android:text="edit"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.857"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.914" />
+</androidx.constraintlayout.widget.ConstraintLayout>

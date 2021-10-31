@@ -7,9 +7,9 @@ import com.tuwaiq.todo_asmaa.model.Task
 
 @Dao
 interface  ToDo_Dao {
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertTask(task: Task) // suspend: means put it on different thread
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertTag(tag: Tag)
 
     @Query("select * from Task")
@@ -32,10 +32,24 @@ interface  ToDo_Dao {
     @Query("delete from TaskToTag where taskId == :tagId")
     suspend fun deleteRelationWithTag(tagId:Int)
 
+    @Query("delete from Task where id == :taskId")
+    suspend fun deleteTaskById(taskId:Int)
 
     @Query("select * from Task where  id == :taskId")
     suspend fun selectTaskById(taskId :Int): Task
 
     @Query("SELECT * FROM Task ORDER BY DueDateTime ASC")
     suspend  fun getAllTasksByTimeDEC():List<Task>
+
+    @Query("update Task set state = :state1 where id == :taskId")
+    suspend  fun updatethestate(state1:Boolean,taskId:String)
+
+    @Query("select * from Task where state =:state1 and :currentDate > DueDateTime ")
+    suspend  fun getAlloutdatedAndincompelte(state1:Boolean,currentDate:String):List<Task>
+
+    @Query("select * from Task where state =:state1 and :currentDate <= DueDateTime ")
+    suspend  fun getAllIncompleteavailable(state1:Boolean,currentDate:String):List<Task>
+
+    @Query("select * from Task where state =:state1 ")
+    suspend  fun getAlldoneTask(state1:Boolean):List<Task>
 }

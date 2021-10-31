@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vanigation"
+    app:startDestination="@id/first_fragment">
+
+    <fragment
+        android:id="@+id/first_fragment"
+        android:name="com.tuwaiq.todo_asmaa.UI.first_fragment"
+        android:label="first_fragment" >
+        <action
+            android:id="@+id/action_first_fragment_to_add_Task"
+            app:destination="@id/add_Task" />
+        <action
+            android:id="@+id/action_first_fragment_to_show_details"
+            app:destination="@id/show_details" />
+    </fragment>
+    <fragment
+        android:id="@+id/add_Task"
+        android:name="com.tuwaiq.todo_asmaa.UI.Add_Task"
+        android:label="fragment_show_details"
+        tools:layout="@layout/show_details_fragment" >
+
+        <action
+            android:id="@+id/action_add_Task_to_first_fragment"
+            app:destination="@id/first_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/show_details"
+        android:name="com.tuwaiq.todo_asmaa.UI.show_details"
+        android:label="show_details" >
+        <action
+            android:id="@+id/action_show_details_to_first_fragment"
+            app:destination="@id/first_fragment" />
+        <argument
+            android:name="detalis"
+            app:argType="com.tuwaiq.todo_asmaa.model.Task" />
+        <action
+            android:id="@+id/action_show_details_to_update_fragment"
+            app:destination="@id/update_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/update_fragment"
+        android:name="com.tuwaiq.todo_asmaa.UI.Update_fragment"
+        android:label="Update_fragment" >
+        <action
+            android:id="@+id/action_update_fragment_to_first_fragment"
+            app:destination="@id/first_fragment" />
+        <argument
+            android:name="update"
+            app:argType="com.tuwaiq.todo_asmaa.model.Task" />
+    </fragment>
+</navigation>

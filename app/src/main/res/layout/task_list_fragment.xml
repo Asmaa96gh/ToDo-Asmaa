@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="UI.first_fragment">
+    tools:context="UI.first_fragment"
+    android:orientation="vertical"
+   android:background="@color/background2">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvRecycleView"
@@ -16,10 +18,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/toaddTaskpage"
         android:layout_width="75dp"
         android:layout_height="62dp"
-        android:src="@android:drawable/ic_menu_add"
+        android:src="@drawable/addicon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.88"

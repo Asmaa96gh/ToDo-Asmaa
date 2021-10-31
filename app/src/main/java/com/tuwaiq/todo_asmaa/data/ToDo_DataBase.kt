@@ -11,7 +11,7 @@ import com.tuwaiq.todo_asmaa.model.TaskToTag
 
 
 @Database(entities = [Tag::class , Task::class , TaskToTag::class], version = 1 ,exportSchema = false)
-@TypeConverters(LocalDateTimeConverter::class)
+
 abstract class ToDo_DataBase :RoomDatabase(){
   abstract val ToDoDao: ToDo_Dao
 
