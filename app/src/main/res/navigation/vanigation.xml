@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/add_Task"
-        android:name="com.tuwaiq.todo_asmaa.Add_Task"
+        android:name="com.tuwaiq.todo_asmaa.UI.Add_Task"
         android:label="fragment_show_details"
         tools:layout="@layout/show_details_fragment" >
 
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/show_details"
-        android:name="com.tuwaiq.todo_asmaa.show_details"
+        android:name="com.tuwaiq.todo_asmaa.UI.show_details"
         android:label="show_details" >
         <action
             android:id="@+id/action_show_details_to_first_fragment"
@@ -42,7 +42,7 @@
     </fragment>
     <fragment
         android:id="@+id/update_fragment"
-        android:name="com.tuwaiq.todo_asmaa.Update_fragment"
+        android:name="com.tuwaiq.todo_asmaa.UI.Update_fragment"
         android:label="Update_fragment" >
         <action
             android:id="@+id/action_update_fragment_to_first_fragment"

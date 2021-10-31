@@ -24,7 +24,7 @@
     <item
         android:title=""
         android:id="@+id/home"
-        android:icon="@drawable/ic_baseline_home_24"
+        android:icon="@drawable/whitehome"
         app:showAsAction="always"
         />
 

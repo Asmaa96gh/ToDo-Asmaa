@@ -1,12 +1,10 @@
-package com.tuwaiq.todo_asmaa
+package com.tuwaiq.todo_asmaa.UI
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.tuwaiq.todo_asmaa.UI.first_fragment
-import com.tuwaiq.todo_asmaa.UI.MainActivity
 
 import android.app.DatePickerDialog.OnDateSetListener
 
@@ -18,14 +16,14 @@ import android.widget.*
 
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
-import com.tuwaiq.todo_asmaa.UI.first_fragmentDirections
+import com.tuwaiq.todo_asmaa.R
 import com.tuwaiq.todo_asmaa.model.Task
 import com.tuwaiq.todo_asmaa.view.MainViewModel
-import kotlinx.android.synthetic.main.add_task_fragment.*
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*
-import android.app.DatePickerDialog as DatePickerDialog1
+import android.app.DatePickerDialog
+import kotlinx.android.synthetic.main.add_task_fragment.view.*
 
 
 class Add_Task : Fragment() {
@@ -58,10 +56,10 @@ class Add_Task : Fragment() {
         dateTimePicker=view.findViewById(R.id.user_duedate)
         btndueDate=view.findViewById(R.id.btnDuedate)
         btndueDate.setOnClickListener{
-                   showDateTimeDialog(dateTimePicker)}
+            showDateTimeDialog(dateTimePicker)}
+
 
         btnAdd=view.findViewById(R.id.add_task)
-
         btnAdd.setOnClickListener{
             //convert date od creation task to string to store it in the database
             val localDate: LocalDateTime= LocalDateTime.now()
@@ -82,15 +80,13 @@ class Add_Task : Fragment() {
                         btnAdd.isEnabled=false
                     }
                 } else{describtion.error=" mandatory!!"
-                btnAdd.isEnabled=false}
+                    btnAdd.isEnabled=false}
             } else{title.error=" mandatory!!"
                 btnAdd.isEnabled=false}
 
             val action= Add_TaskDirections.actionAddTaskToFirstFragment()
             it.findNavController().navigate(action)
         }
-
-
 
     }
 
@@ -110,19 +106,33 @@ class Add_Task : Fragment() {
                     }
                 TimePickerDialog(
                     requireContext(),
+                    R.style.dialogStyle,
                     timeSetListener,
                     calendar.get(Calendar.HOUR_OF_DAY),
                     calendar.get(Calendar.MINUTE),
                     false
                 ).show()
             }
-        DatePickerDialog1(
+        DatePickerDialog(
             requireContext(),
+            R.style.dialogStyle,
             dateSetListener,
             calendar.get(Calendar.YEAR),
             calendar.get(Calendar.MONTH),
             calendar.get(Calendar.DAY_OF_MONTH)
         ).show()
+    }
+
+    fun showdateDialog(text:TextView){
+        val cal = Calendar.getInstance()
+        val day = cal.get(Calendar.DAY_OF_MONTH)
+        val month = cal.get(Calendar.MONTH)
+        val year = cal.get(Calendar.YEAR)
+        android.app.DatePickerDialog(requireContext(),
+            OnDateSetListener { view, year, month, day ->
+            text.setText("$day/$month/$year")
+        }, year, month, day).show()
+
     }
 
 }

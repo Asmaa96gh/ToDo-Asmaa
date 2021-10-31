@@ -4,158 +4,91 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Add_Task"
-    android:background="@color/cardview"
-    android:layout_margin="50dp">
+    tools:context=".UI.Add_Task"
+    android:background="@color/background2"
+    >
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:text="Task details"
+        android:textSize="30dp"
+        android:fontFamily="@font/shellina"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.111"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.329">
-
-        <TextView
-            android:layout_width="105dp"
-            android:layout_height="40dp"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            android:paddingTop="10dp"
-
-            android:text="due date"
-            android:textColor="@color/black" />
-
-        <ImageButton
-            android:id="@+id/btnDuedate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:src="@drawable/calendar" />
-
-        <TextView
-            android:id="@+id/user_duedate"
-            android:layout_width="153dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@color/offwhite"
-            android:ems="10"
-            android:minHeight="48dp"
-            tools:ignore="SpeakableTextPresentCheck" />
-    </LinearLayout>
+        app:layout_constraintVertical_bias="0.13" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_width="350dp"
+        android:layout_height="421dp"
+        android:layout_margin="30dp"
+        android:background="@drawable/customborder"
+        android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.802"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.545"
-        tools:layout_editor_absoluteX="0dp">
+        app:layout_constraintVertical_bias="0.428">
 
-        <TextView
-            android:layout_width="wrap_content"
+
+        <EditText
+            android:id="@+id/user_title"
+            android:layout_width="285dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="0dp"
-            android:layout_weight="1"
-            android:text="discription:"
-            android:textColor="@color/black" />
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:hint="task title"
+            android:inputType="text"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintVertical_bias="0.737">
+
+            <EditText
+                android:id="@+id/user_duedate"
+                android:layout_width="235dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="pick the due date"
+                android:minHeight="48dp"
+                android:textColor="@color/black" />
+
+            <ImageButton
+                android:id="@+id/btnDuedate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:src="@drawable/calendar"
+               />
+
+        </LinearLayout>
 
         <EditText
             android:id="@+id/user_dicription"
-            android:layout_width="wrap_content"
+            android:layout_width="284dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:background="@color/offwhite"
             android:ems="10"
+            android:hint="describtion"
             android:inputType="textMultiLine"
-            android:lines="5"
+            android:lines="4"
             android:maxLines="10"
             android:minHeight="48dp"
             tools:ignore="SpeakableTextPresentCheck" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.195">
-
-        <TextView
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_weight="1"
-            android:text="Title"
-            android:textColor="@color/black"
-
-            />
-
-        <EditText
-            android:id="@+id/user_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@color/offwhite"
-            android:ems="10"
-            android:inputType="text"
-            android:minHeight="48dp"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.737">
-
-        <TextView
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_weight="1"
-            android:text="tags"
-            android:textColor="@color/black"
-
-            />
-
-        <EditText
-            android:id="@+id/user_tag"
-            android:layout_width="170dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@color/offwhite"
-            android:ems="10"
-            android:inputType="text"
-            android:maxLength="20"
-            android:minHeight="48dp"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:src="@drawable/addiconblack"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="10dp"/>
 
     </LinearLayout>
 
@@ -168,8 +101,9 @@
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.794"
+        app:layout_constraintHorizontal_bias="0.808"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.873" />
+        app:layout_constraintVertical_bias="0.844" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

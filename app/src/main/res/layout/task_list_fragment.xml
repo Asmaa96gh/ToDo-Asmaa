@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="UI.first_fragment"
     android:orientation="vertical"
-   android:background="@color/background">
+   android:background="@color/background2">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvRecycleView"

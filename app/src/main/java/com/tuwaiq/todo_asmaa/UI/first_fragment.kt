@@ -22,7 +22,7 @@ class first_fragment : Fragment() {
     private lateinit var viewModel: MainViewModel
     private lateinit var recyclerView: RecyclerView
     private lateinit var to_addTaskPage: ImageView
-    private lateinit var deleteTask :ImageView
+    private lateinit var deleteTask: ImageView
 
 
     override fun onCreateView(
@@ -32,12 +32,14 @@ class first_fragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.task_list_fragment, container, false)
     }
+
     companion object {
         fun newInstance() = first_fragment()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         setHasOptionsMenu(true)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
@@ -46,25 +48,18 @@ class first_fragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
 
-
-
-
-        viewModel.getAllTasks().observe(viewLifecycleOwner ,{
-            recyclerView.adapter = TaskListAdapter(it,viewModel)
+        viewModel.getAllTasks().observe(viewLifecycleOwner, {
+            recyclerView.adapter = TaskListAdapter(it, viewModel)
 
         })
 
         to_addTaskPage = view.findViewById(R.id.toaddTaskpage)
         to_addTaskPage.setOnClickListener {
-            val action= first_fragmentDirections.actionFirstFragmentToAddTask()
+            val action = first_fragmentDirections.actionFirstFragmentToAddTask()
             it.findNavController().navigate(action)
-       }
+        }
     }
 
-   /* override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-    }
-*/
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.state_menu, menu)
@@ -73,39 +68,41 @@ class first_fragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
-        val now=LocalDateTime.now()
-       val dateTimeOftheMoment= convertDateToString(now)
-       return when (item.itemId) {
+        val now = LocalDateTime.now()
+        val dateTimeOftheMoment = convertDateToString(now)
+        return when (item.itemId) {
             R.id.yellow -> {
-                viewModel.getAllIncompleteavailable(false,dateTimeOftheMoment).observe(viewLifecycleOwner,{
-                        recyclerView.adapter = TaskListAdapter(it,viewModel)
-                })
-true
+                viewModel.getAllIncompleteavailable(false, dateTimeOftheMoment)
+                    .observe(viewLifecycleOwner, {
+                        recyclerView.adapter = TaskListAdapter(it, viewModel)
+                    })
+                true
             }
             R.id.red -> {
-viewModel.getAlloutdatedAndincompelte(false,dateTimeOftheMoment).observe(viewLifecycleOwner,{
-    recyclerView.adapter = TaskListAdapter(it,viewModel)
-})
-true
+                viewModel.getAlloutdatedAndincompelte(false, dateTimeOftheMoment)
+                    .observe(viewLifecycleOwner, {
+                        recyclerView.adapter = TaskListAdapter(it, viewModel)
+                    })
+                true
             }
             R.id.green -> {
-viewModel.getAlldoneTask(true).observe(viewLifecycleOwner,{
-    recyclerView.adapter = TaskListAdapter(it,viewModel)
-})
-true
+                viewModel.getAlldoneTask(true).observe(viewLifecycleOwner, {
+                    recyclerView.adapter = TaskListAdapter(it, viewModel)
+                })
+                true
             }
-           R.id.home -> {
-               viewModel.getAllTasks().observe(viewLifecycleOwner ,{
-                   recyclerView.adapter = TaskListAdapter(it,viewModel)
+            R.id.home -> {
+                viewModel.getAllTasks().observe(viewLifecycleOwner, {
+                    recyclerView.adapter = TaskListAdapter(it, viewModel)
 
-               })
-               true
-           }
-           else -> false
-       }
+                })
+                true
+            }
+            else -> false
+        }
     }
 
-    fun convertDateToString(Date: LocalDateTime):String{
+    fun convertDateToString(Date: LocalDateTime): String {
         val localDate: LocalDateTime = LocalDateTime.now()
         val formatter = DateTimeFormatter.ofPattern("yy-MM-dd HH:mm")
         val formattedCreationDate: String = localDate.format(formatter)

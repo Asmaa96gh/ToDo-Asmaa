@@ -20,7 +20,6 @@ class task_Item_fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.task_item_fragment, container, false)
     }
 
@@ -29,10 +28,6 @@ class task_Item_fragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-   /*     val txt =view.findViewById<TextView>(R.id.testId)
-        super.onViewCreated(view, savedInstanceState)
-        val vmTask = ViewModelProvider(this).get(MainViewModel::class.java)
 
-*/
         }
     }

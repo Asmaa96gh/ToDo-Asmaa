@@ -14,16 +14,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.container)
-     /*   if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.container, first_fragment.newInstance())
-                .commit()
 
-
-        }*/
-      val navHostFragment = supportFragmentManager
-            .findFragmentById(R.id.navHost) as NavHostFragment
-        navHostFragment.navController
+        getSupportActionBar()?.setDisplayShowTitleEnabled(false)
 
     }
 

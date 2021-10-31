@@ -4,95 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Add_Task"
-    android:background="@color/cardview"
-    android:layout_margin="50dp">
+    tools:context=".UI.Add_Task"
+    android:background="@color/background2"
+   >
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:text="task details:"
+        android:textSize="30dp"
+        android:fontFamily="@font/shellina"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.095"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.367">
-
-        <TextView
-            android:layout_width="105dp"
-            android:layout_height="40dp"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            android:paddingTop="10dp"
-            android:text="due date"
-            android:textColor="@color/black" />
-
-
-        <TextView
-            android:id="@+id/show_duedate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:ems="10"
-            android:minHeight="48dp"
-            tools:ignore="SpeakableTextPresentCheck" />
-    </LinearLayout>
+        app:layout_constraintVertical_bias="0.091" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.681"
-        tools:layout_editor_absoluteX="0dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="0dp"
-            android:layout_weight="1"
-            android:text="discription:"
-            android:textColor="@color/black" />
-
-        <TextView
-            android:id="@+id/show_decription"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:ems="10"
-            android:inputType="textMultiLine"
-            android:lines="5"
-            android:maxLines="10"
-            android:minHeight="48dp"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:id="@+id/linearLayout2"
+        android:layout_width="343dp"
+        android:layout_height="428dp"
+        android:background="@drawable/customborder"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.115">
+        app:layout_constraintVertical_bias="0.445">
 
-        <TextView
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_weight="1"
-            android:text="Title"
-            android:textColor="@color/black"
-
-            />
 
         <TextView
             android:id="@+id/show_title"
@@ -100,33 +41,39 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:ems="10"
+            android:fontFamily="@font/rubik_variablefont_wght"
             android:inputType="text"
             android:minHeight="48dp"
+            android:textColor="@color/black"
+            android:textSize="25dp"
             tools:ignore="SpeakableTextPresentCheck" />
 
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
         <TextView
-
+            android:id="@+id/show_duedate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_weight="1"
-            android:text="Creation date"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:fontFamily="@font/rubik_variablefont_wght"
+            android:minHeight="48dp"
             android:textColor="@color/black"
+            android:textSize="20dp"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-            />
+
+        <TextView
+            android:id="@+id/show_decription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:fontFamily="@font/rubik_variablefont_wght"
+            android:inputType="textMultiLine"
+            android:minHeight="48dp"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
 
         <TextView
             android:id="@+id/show_creationDate"
@@ -134,43 +81,13 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:ems="10"
+            android:fontFamily="@font/rubik_variablefont_wght"
             android:inputType="text"
             android:minHeight="48dp"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.235">
-
-        <TextView
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_weight="1"
-            android:text="Show State"
             android:textColor="@color/black"
-
-            />
-
-        <TextView
-            android:id="@+id/show_state"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:ems="10"
-            android:inputType="text"
-            android:minHeight="48dp"
+            android:textSize="20dp"
             tools:ignore="SpeakableTextPresentCheck" />
+
 
     </LinearLayout>
 
